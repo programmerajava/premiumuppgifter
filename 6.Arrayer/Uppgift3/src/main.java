@@ -14,15 +14,15 @@ public class main {
 
         //Sparar undan väderdatan i fyra olika arraylists
         ArrayList<String> timestamps = data.getTimestamps();
-        ArrayList<Float> barometer = data.getBarometer();
-        ArrayList<Float> temp = data.getTemp();
-        ArrayList<Float> rain = data.getRain();
+        ArrayList<Double> barometer = data.getBarometer();
+        ArrayList<Double> temp = data.getTemp();
+        ArrayList<Double> rain = data.getRain();
 
         //Skriv ut exempeldata
-        System.out.println( "Tid: " + timestamps.get(0) +
-                            " Barometer: " + barometer.get(0) +
-                            " Temperatur: " + temp.get(0) +
-                            " Mängd regn: " + rain.get(0));
+        System.out.println( "Exempeldata - Tid: " + timestamps.get(0) +
+                ", Barometer: " + barometer.get(0) +
+                ", Temperatur: " + temp.get(0) +
+                ", Mängd regn: " + rain.get(0));
 
     }
 
