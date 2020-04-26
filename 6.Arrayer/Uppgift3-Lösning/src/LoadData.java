@@ -13,9 +13,9 @@ public class LoadData {
     String line;
     String cvsSplitBy = ";";
     ArrayList <String> timestamps = new ArrayList<String>();
-    ArrayList <String> barometer = new ArrayList<String>();
-    ArrayList <String> temp = new ArrayList<String>();
-    ArrayList <String> rain = new ArrayList<String>();
+    ArrayList <Float> barometer = new ArrayList<Float>();
+    ArrayList <Float> temp = new ArrayList<Float>();
+    ArrayList <Float> rain = new ArrayList<Float>();
 
 
     LoadData(String csvFile){
@@ -35,9 +35,9 @@ public class LoadData {
 
                 //Append all values to each arraylist
                 timestamps.add(row[0]);
-                barometer.add(row[1]);
-                temp.add(row[2]);
-                rain.add(row[3]);
+                barometer.add(Float.parseFloat(row[1].replace(',', '.')));
+                temp.add(Float.parseFloat(row[2].replace(',', '.')));
+                rain.add(Float.parseFloat(row[3].replace(',', '.')));
 
             }
         } catch (FileNotFoundException e) {
@@ -61,15 +61,15 @@ public class LoadData {
         return timestamps;
     }
 
-    public ArrayList<String> getBarometer() {
+    public ArrayList<Float> getBarometer() {
         return barometer;
     }
 
-    public ArrayList<String> getTemp() {
+    public ArrayList<Float> getTemp() {
         return temp;
     }
 
-    public ArrayList<String> getRain() {
+    public ArrayList<Float> getRain() {
         return rain;
     }
 }
